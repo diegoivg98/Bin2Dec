@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './App.css'
 
 function App() {
   const [binary, setBinary] = useState("");
@@ -19,7 +20,7 @@ function App() {
       <div className="form-group">
         <input
           type="number"
-          className="form-control"
+          className="form-control w-100"
           id="binary-input"
           value={binary}
           onChange={handleChange}

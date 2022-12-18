@@ -17,16 +17,21 @@ function App() {
   return (
     <div className="container mt-3">
       <h1 className="text-center p-2">Bin2Dec</h1>
-      <div className="form-group">
+      <div className="form-group mt-3 col-4">
+      <form>
         <input
-          type="number"
+          type="text"
           className="form-control w-100"
           id="binary-input"
           value={binary}
           onChange={handleChange}
           placeholder="Ingresa el número binario"
           required
+          minLength={1} 
+          maxLength={8}
+          pattern="/[^01]/"
         />
+        </form>
       </div>
       <button
         type="button"
@@ -35,7 +40,7 @@ function App() {
       >
         Convertir
       </button>
-      <div className="form-group mt-3">
+      <div className="form-group mt-3 col-4">
         <input
           type="text"
           className="form-control"

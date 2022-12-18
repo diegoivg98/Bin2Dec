@@ -2,18 +2,32 @@ import React, { useState } from "react";
 import './App.css'
 
 function App() {
-  const [binary, setBinary] = useState("");
-  const [decimal, setDecimal] = useState("");
+  const [binary, setBinary] = useState('');
+  const [decimal, setDecimal] = useState('');
 
-  function handleChange(event) {
+  const handleChange = (event) => {
     setBinary(event.target.value);
-  }
+  };
 
-  function handleConversion() {
-    /* Convertir el número binario en decimal. */
-    setDecimal(parseInt(binary, 2));
-  }
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
+    // Validate input
+    if (!binary) {
+      alert('Debes ingresar un numero binario');
+      return;
+    }
+
+    const regex = /^[01]+$/;
+    if (!regex.test(binary)) {
+      alert('Un numero binario esta compuesto de 1 y 0');
+      return;
+    }
+
+    // Convert binary to decimal
+    const result = parseInt(binary, 2);
+    setDecimal(result);
+  };
   return (
     <div className="container mt-3">
       <h1 className="text-center p-2">Bin2Dec</h1>
@@ -36,7 +50,7 @@ function App() {
       <button
         type="button"
         className="btn btn-outline-success d-flex m-auto mt-sm-3"
-        onClick={handleConversion}
+        onClick={handleSubmit}
       >
         Convertir
       </button>

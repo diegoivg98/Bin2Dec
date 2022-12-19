@@ -49,7 +49,7 @@ function App() {
       </div>
       <button
         type="button"
-        className="btn btn-outline-success d-flex m-auto mt-sm-3"
+        className="d-flex m-auto mt-sm-3"
         onClick={handleSubmit}
       >
         Convertir

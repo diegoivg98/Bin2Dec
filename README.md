@@ -1,8 +1,6 @@
 # Bin2Dec
 Bin2Dec Convert
 
-# Bin2Dec
-
 **Tier:** 1-Beginner
 
 Binary is the number system all digital computers are based on.
